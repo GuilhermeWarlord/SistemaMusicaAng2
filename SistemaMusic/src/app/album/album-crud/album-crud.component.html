@@ -1,0 +1,28 @@
+<router-outlet></router-outlet>
+	<div class="card border-secondary mb-3">
+		<div class="card-header">Cadastro de &Aacute;lbuns</div>
+	</div>
+	<ul class="nav nav-tabs" id="albumTab" role="tablist">
+		<li class="nav-item">
+			<a class="nav-link active" id="cadastro-tab" data-toggle="tab" href="#cadastro" role="tab"
+				aria-controls="tabCadastro" aria-selected="true">Cadastro</a>
+		</li>
+		<li class="nav-item">
+      <a class="nav-link" id="dados-tab" data-toggle="tab" href="#dados" role="tab" aria-controls="tabDados"
+          aria-selected="false">&Aacute;lbuns Cadastrados</a>
+		</li>
+	</ul>
+	<div class="tab-content" id="albumTabContent">
+		<div class="tab-pane fade show active" id="cadastro" role="tabpanel" aria-labelledby="cadastro-tab">
+			<app-album-form></app-album-form>
+		</div>
+		<div class="tab-pane fade" id="dados" role="tabDados" aria-labelledby="dados-tab">
+			<div role="tabpanel" class="tab-pane" id="dados">
+        <app-album-list></app-album-list>
+			</div>
+		</div>
+	</div>
+
+									
+									
+	

@@ -1,0 +1,30 @@
+<input type="text" [(ngModel)]="searchText" class="form-control"
+placeholder="Busca: "/> 
+<table class="table table-hover">
+  <thead>
+      <tr>
+        <th>C&oacute;digo</th>
+        <th>T&iacute;tulo</th>
+        <th>Banda</th>
+        <th>Gravadora</th>
+        <th>Lan&ccedil;amento</th>
+        <th>Dura&ccedil;&atilde;o</th>
+        
+        
+      </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let albunsTabela of albuns | filter:searchText">
+      <a [routerLink]="[albunsTabela.codigo]">
+      <td>{{albunsTabela.codigo}}</td></a>	
+      <td>{{albunsTabela.titulo}}</td>	
+      <td>{{albunsTabela.banda}}</td>	
+      <td>{{albunsTabela.gravadora}}</td>	
+      <td>{{albunsTabela.lancamento}}</td>	
+      <td>{{albunsTabela.duracao}}</td>	
+        
+    </tr>
+  </tbody>		
+</table>
+<span [hidden]="(albuns | filter: searchText).length != 0">Infelizmente 
+    n&atilde;o temos o que voc&ecirc; est&aacute; procurando</span>
