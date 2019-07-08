@@ -5,7 +5,7 @@ import { LoginComponent } from './login/login.component';
 const routes: Routes = [
     {
         path: '',
-        component: HomeComponent
+        component: LoginComponent
     },
     {
         path: 'home',
@@ -18,7 +18,7 @@ const routes: Routes = [
         canActivate: [AuthGuard]
     },
     {   
-        path: 'singin',
+        path: 'signin',
         component: LoginComponent
 
     }

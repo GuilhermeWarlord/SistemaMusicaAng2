@@ -11,7 +11,7 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class AlbumService {
 
-  private url: string = "http://localhost:8080/album";
+  private url: string = "http://localhost:3000/albuns";
 
   albumchanged = new EventEmitter<Observable<Album[]>>();
 
@@ -52,7 +52,7 @@ export class AlbumService {
   }
 
   private getUrl(id: number){
-    return '${this.url}/${id}';
+    return `${this.url}/${id}`;
   }
 
   update(album: Album){

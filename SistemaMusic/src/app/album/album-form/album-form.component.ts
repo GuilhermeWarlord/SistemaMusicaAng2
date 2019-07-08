@@ -65,7 +65,7 @@ export class AlbumFormComponent implements OnInit {
         .subscribe(
           data => this.novo,
           err =>{
-            alert("Cliente não removido! ");
+            alert("Album não removido! ");
           }
       );
       this.novo();
