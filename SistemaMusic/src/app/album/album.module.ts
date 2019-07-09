@@ -6,7 +6,8 @@ import { albumRouting } from './album.routing';
 import { AlbumService } from './album.service';
 import { AlbumFormComponent } from './album-form/album-form.component';
 import { AlbumCrudComponent } from './album-crud/album-crud.component';
-import { FilterPipe } from 'app/filter.pipe';
+import { FilterPipe } from './filter.pipe';
+
 
 @NgModule({
   imports: [

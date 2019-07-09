@@ -17,6 +17,12 @@ const routes: Routes = [
         loadChildren: 'app/album/album.module#AlbumModule',
         canActivate: [AuthGuard]
     },
+    
+    { 
+        path: 'banda',
+        loadChildren: 'app/banda/banda.module#BandaModule',
+        canActivate: [AuthGuard]
+    },
     {   
         path: 'signin',
         component: LoginComponent

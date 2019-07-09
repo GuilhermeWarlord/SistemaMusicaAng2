@@ -5,23 +5,20 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
-import { BandaComponent } from './banda/banda.component';
-import { MusicaComponent } from './musica/musica.component';
 import { HomeComponent } from './home/home.component';
 import { RoutingModule } from './app.router';
 import { LoginComponent } from './login/login.component';
 import { LoginServiceService } from './login/login-service.service';
 import { AuthGuard } from './login/login-guard';
+import { ArtistaComponent } from './artista/artista.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    BandaComponent,
-    MusicaComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

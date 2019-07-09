@@ -1,12 +1,12 @@
 const express = require('express');
-const Album = require('../models/albuns');
+const Banda = require('../models/bandas');
 const router = express.Router();
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
 router.get('/', (req, res) => {
     console.log("findall")
-    Album.findAll()
+    Banda.findAll()
         .then(result => res.json(result))
         .catch(error => {
             res.status(412).json({msg: error.message});
@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    Album.findOne({
+    Banda.findOne({
         where: { codigo: req.params.id }
     }).then(result => {
         if(result) res.json(result);
@@ -25,17 +25,17 @@ router.get('/:id', (req, res) => {
 });
 
 router.get('/search/params', (req, res) => {
-    let query = `%${req.query.titulo}%`;
+    let query = `%${req.query.nome_banda}%`;
 
     console.log(query);
-    Album.findAll({ where: { titulo: { [Op.like]: query } } })
-        .then(albuns => res.json(albuns))
+    Banda.findAll({ where: { nome_banda: { [Op.like]: query } } })
+        .then(bandas => res.json(bandas))
         .catch(err => console.log(err));
 });
 
 router.post('/', (req, res) => {
     console.log(req.body);
-    Album.create(req.body)
+    Banda.create(req.body)
         .then(result => res.json(result))
         .catch(error => {
             res.status(412).json({ msg: error.message });
@@ -43,7 +43,7 @@ router.post('/', (req, res) => {
 });
 
 router.put('/', (req, res) => {
-    Album.update(req.body, {
+    Banda.update(req.body, {
         where: { codigo: req.body.codigo }
     })
         .then(result => res.sendStatus(204))
@@ -53,7 +53,7 @@ router.put('/', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    Album.destroy({
+    Banda.destroy({
         where: { codigo: req.params.id }
     })
     .then(result => res.sendStatus(204))

@@ -1,0 +1,37 @@
+<form class="was-validated form-row" #cadastro="ngForm" (ngSubmit)="salvar()">
+  <div class="col-md-1 mb-3">
+    <label for="txtCodigo">C&oacute;digo</label>
+    <input type="text" [(ngModel)]="banda.codigo" class="form-control" disabled name="txtCodigo">									
+  </div>
+
+  <div class="col-md-2 mb-3">
+    <label for="txtNomeBanda">Nome</label>
+    <input type="text" [(ngModel)]="banda.nomeBanda" class="form-control is-valid" #txtNomeBanda="ngModel" name="txtNomeBanda" minlength="5"required>
+    <div [hidden]="txtNomeBanda.valid"class="invalid-feedback">
+      Digite o Nome da Banda.			
+    </div>				
+  </div>
+
+  <div class="col-md-2 mb-3">
+    <label for="txtNacionalidade">Nacionalidade</label>
+    <input type="text" [(ngModel)]="banda.nacionalidade" class="form-control is-valid" #txtNacionalidade="ngModel" name="txtNacionalidade" minlength="5" required>
+    <div [hidden]="txtNacionalidade.valid" class="invalid-feedback">
+      Digite Nacionalidade da Banda.			
+    </div>				
+  </div>
+
+  <div class="col-md-2 mb-3">
+    <label for="txtDataCriacao">Data Criacao</label>
+    <input type="text" [(ngModel)]="banda.dataCriacao" class="form-control is-valid" #txtDataCricacao="ngModel" name="txtDataCricacao" required>
+    <div [hidden]="txtDataCricacao.valid" class="invalid-feedback">
+      Digite a Data de cricacao da banda.			
+    </div>				
+  </div>
+
+  
+  <div class="container">
+    <button class="btn btn-success" type="submit" [disabled]="cadastro.form.invalid">Salvar</button>
+    <button class="btn btn-danger" type="button"  [hidden]="inNew" (click)="excluir()">Excluir</button>
+    <button class="btn btn-warning" type="button" (click)="cancelar()">Cancelar</button>
+  </div>  	
+</form>

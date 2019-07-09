@@ -27,13 +27,11 @@ export class LoginServiceService {
     console.log(this.url)
     this.http.post(this.url, user, options).toPromise()
     .then((res) => {
+   
       console.log('API Response : ', res.json());
-      console.log('email',res.json().email);
-      console.log('senha',res.json().password);
-      console.log('email',user.email);
-      console.log('senha',user.password);
+  
       if(true){
-      //if ((res.json().email == user.email) && (res.json().password == user.password))  {
+     
         console.log("entrei no signIn e autentiquei!")
    
    // if((user.email === 'user@mail.com') && user.password === '123456'){
@@ -60,7 +58,7 @@ export class LoginServiceService {
   }
 
   isAuthenticated() {
-    console.log("entrei no isAuthenticated()! ")
+    //console.log("entrei no isAuthenticated()! ")
       return this.authenticated;
   }
 

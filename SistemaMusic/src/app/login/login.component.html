@@ -12,7 +12,7 @@
     </div>
     <div class="row">
       <div class="form-group">
-        <input id="password" type="password" class="validate" formControlName="password"
+        <input id="password" type="password" class="validate" formControlName="password" minlength="8"
           [class.invalid]="formLogin.controls['password'].touched && !formLogin.controls['password'].valid">
         <label for="password" data-error="Password is mandatory">
           Password

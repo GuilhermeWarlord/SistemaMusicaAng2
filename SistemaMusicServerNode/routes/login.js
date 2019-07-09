@@ -3,7 +3,7 @@ const Login = require('../models/login');
 const router = express.Router();
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
-
+var autenticado = false;
 router.post('/', (req, res) => {
     //console.log("res: ")
     //console.log(res);
@@ -23,7 +23,7 @@ function login(result, entrada) {
     
     
     result.forEach(result => {
-        console.log("result.email: ")
+    console.log("result.email: ")
     console.log(result.email)
     console.log("result.password: ")
     console.log(result.password)
@@ -35,9 +35,9 @@ function login(result, entrada) {
    
     if((result.email === entrada.email) && (result.password === entrada.password)){
         console.log("entrou na autenticacao!") 
-        result.autentiquei = "autenticado";
-        contagem = cont -1;
-        result[contagem];
+       
+        
+    
     }else
         
         console.log("não autenticou!")

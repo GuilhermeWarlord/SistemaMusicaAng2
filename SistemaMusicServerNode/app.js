@@ -20,10 +20,16 @@ app.set('json spaces', 4);
 
 const index = require('./routes/index');
 const albuns = require('./routes/albuns');
+const artistas = require('./routes/artistas');
+const bandas = require('./routes/bandas');
+const musicas = require('./routes/musicas');
 const login = require('./routes/login');
 
 app.use('/', index);
 app.use('/albuns', albuns);
+app.use('/artistas', artistas);
+app.use('/bandas', bandas);
+app.use('/musicas', musicas);
 app.use('/login', login);
 
 app.listen(port, () => console.log('Up on port '+port));
