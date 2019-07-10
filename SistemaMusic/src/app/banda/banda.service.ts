@@ -6,10 +6,11 @@ import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
-
+    
 @Injectable()
 export class BandaService {
 
+  private x;
   private url: string = "http://localhost:3000/bandas";
 
   bandachanged = new EventEmitter<Observable<Banda[]>>();
