@@ -7,7 +7,7 @@ const Musica = db.define('musica', {
         primaryKey: true,
         autoIncrement: true
     },
-    nome_musica: {
+    nomeMusica: {
         type: Sequelize.STRING,
         allowNull: false
     },
